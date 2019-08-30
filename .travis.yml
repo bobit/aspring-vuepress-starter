@@ -36,6 +36,8 @@ before_script:
 # 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
 after_script:
 - cd docs/.vuepress/dist
+# 发布到自定义域名
+- echo 'zhangbo.fun' > CNAME
 - git init
 - git add .
 - git commit -m "Update docs"
