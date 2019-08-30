@@ -23,6 +23,11 @@ cache:
 notifications:
     email: true
 
+# 指定需要部署到的仓库地址
+env:
+    global:
+    - GH_REF: github.com/bobit/bobit.github.io.git
+
 before_script:
 - git config user.name "bobit"
 - git config user.email "iloveapi@163.com"
@@ -34,7 +39,7 @@ after_script:
 - git init
 - git add .
 - git commit -m "Update docs"
-- git push --force --quiet "https://${GH_TOKEN}@github.com/bobit/bobit.github.io.git" master:master
+- git push --force --quiet "https://${GH_TOKEN}@${GH_REF}" master:master
 #jobs:
 #  include:
 #    - stage: docs release
