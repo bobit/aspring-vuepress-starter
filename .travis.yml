@@ -23,23 +23,31 @@ cache:
 notifications:
     email: true
 
-jobs:
-  include:
-    - stage: docs release
-      node_js: stable
-      script: 
-        - echo "Deploying to npm ..."
-        - npm install
-        - npm install -g vuepress
-        - npm run build
-        - ./deploy.sh
-      deploy:
-        provider: pages
-        skip-cleanup: true
-        local_dir: docs/.vuepress/dist
-        github-token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
-        repo: bobit/aspring-vuepress-starter
-        keep-history: true
-        target-branch: master
-        on:
-            branch: master
+# travis-ci生成静态文件，并将public目录下的文件全部 push 到所指定仓库的 master 分支。
+# 设置git提交名，邮箱；替换真实token到_config.yml文件，最后depoy部署
+after_script:
+- cd docs/.vuepress/dist
+- git init
+- git add .
+- git commit -m "Update docs"
+- git push --force --quiet "https://${GH_TOKEN}@github.com/bobit/bobit.github.io.git" master:master
+#jobs:
+#  include:
+#    - stage: docs release
+#      node_js: stable
+#      script:
+#        - echo "Deploying to npm ..."
+#        - npm install
+#        - npm install -g vuepress
+#        - npm run build
+#        - ./deploy.sh
+#      deploy:
+#        provider: pages
+#        skip-cleanup: true
+#        local_dir: docs/.vuepress/dist
+#        github-token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
+#        repo: bobit/aspring-vuepress-starter
+#        keep-history: true
+#        target-branch: master
+#        on:
+#            branch: master
