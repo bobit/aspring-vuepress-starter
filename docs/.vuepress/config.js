@@ -1,6 +1,6 @@
 // .vuepress/config.js
 module.exports = {
-  base: '/aspring-vuepress-starter/',
+  base: '/',
   theme: 'cool',
   //dest: 'dist',
   head: [
