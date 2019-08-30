@@ -6,11 +6,11 @@ os:
 #  - windows
 # windows doesn't work on travis
   
-node_js:
-    - "8"
-    - "9"
-    - "10"
-    - "11"
+node_js: stable
+#    - "8"
+#    - "9"
+#    - "10"
+#    - "11"
     
 install:
     - npm install
@@ -37,7 +37,7 @@ jobs:
         skip-cleanup: true
         local_dir: docs/.vuepress/dist
         github-token: $GH_TOKEN  # Set in the settings page of your repository, as a secure variable
-        repo: bobit/bobit.github.io
+        repo: bobit/aspring-vuepress-starter
         keep-history: true
         target-branch: master
         on:
