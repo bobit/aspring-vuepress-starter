@@ -5,7 +5,7 @@ const path = require('path')
 const util = require('util')
 
 module.exports = {
-  base: 'https://friendlyuser.github.io/vuepress-theme-cool-starter/',
+  base: 'https://bobit.github.io/aspring-vuepress-starter/',
   theme: 'cool',
   //dest: 'dist',
   head: [
@@ -34,7 +34,7 @@ module.exports = {
     sidebarDepth: 2,
     lastUpdated: 'Last Updated', // string | boolean
     // Assumes GitHub. Can also be a full GitLab url.
-    repo: 'FriendlyUser/vuepress-theme-cool-starter',
+    repo: 'bobit/aspring-vuepress-starter',
     // Customising the header label
     // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
     repoLabel: 'Contribute!',

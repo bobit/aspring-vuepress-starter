@@ -1,6 +1,6 @@
 // .vuepress/config.js
 module.exports = {
-  base: '/vuepress-theme-cool-starter/',
+  base: '/aspring-vuepress-starter/',
   theme: 'cool',
   //dest: 'dist',
   head: [
@@ -35,7 +35,7 @@ module.exports = {
     ],
     lastUpdated: 'Last Updated', // string | boolean
       // Assumes GitHub. Can also be a full GitLab url.
-    repo: 'FriendlyUser/vuepress-theme-cool-starter',
+    repo: 'bobit/aspring-vuepress-starter',
     // Customising the header label
     // Defaults to "GitHub"/"GitLab"/"Bitbucket" depending on `themeConfig.repo`
     repoLabel: 'Github',
